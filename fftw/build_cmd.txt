@@ -1,0 +1,1 @@
+gfortran  -fopenmp  -O3 -funroll-all-loops -fno-f2c -fomit-frame-pointer -march=native -Jmodules -I/u/proj6/uav/sw/fftw-3.3.4/include -L/u/proj6/uav/sw/fftw-3.3.4/lib -lfftw3f src/kinds.f90 src/utils.f90 src/fftw.f90 src/test_fftw.f90 -o test_fftw

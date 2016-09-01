@@ -1,0 +1,21 @@
+apt-get install ocaml ocamlbuild  autoconf  automake  indent libtool
+git clone git@github.com:FFTW/fftw3.git
+sh bootstrap.sh
+configure --enable-maintainer-mode --enable-static --enable-shared --enable-openmp --enable-threads --enable-fortran --prefix=/home/trm/usr
+make -j 8
+make install
+configure --enable-static --enable-shared --enable-openmp --enable-threads --enable-fortran --prefix=/home/trm/usr --enable-single
+make -j 8
+make install
+
+git clone git@github.com:NFFT/nfft.git
+cd nfft
+bootstrap.sh 
+./configure --help
+./configure --prefix=/home/trm/usr --with-fftw3=/home/trm/usr
+make -j 8
+make install
+./configure --prefix=/home/trm/usr --with-fftw3=/home/trm/usr --enable-single
+make -j 8
+make install
+
